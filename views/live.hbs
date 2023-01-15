@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fo~nt-awesome.min.css">
+</head>
+
+
+<body>
+    <!-- ..................navbar........................  -->
+  <div class="container" >
+    <img class="logo-icon" alt="" src="/static/images/logo@2x.png" />
+  <nav class="nav" style="top: 9.78px">
+    <a href="###" >HOME</a> 
+    <a href="###">LIVE</a> 
+    <a href="###">SOCIAL</a>   
+    <a href="###">CONTACT-US</a>  
+  <div class="animation start-home"></div>
+  <div class="account">
+     <i class="fa-solid fa-user"></i>
+  </div>
+  </nav>
+    <div class="nav-bar">
+      <div class="search">
+        <form action="#"><input type="search" placeholder=" Search..." name="search"></form>
+    </div>
+    </div> 
+ <div class="livebutton" style="top:10px">
+        <button type="button" class="golivebutton">Start Stream</button>
+  </div>
+  </div>
+
+     <!-- ................crousal .....................  -->
+     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true" >
+      <div class="carousel-indicators">
+        {{#each slider}}
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{@index}}" class="{{this.active}}" aria-current="true" aria-label="Slide {{this.index}}"></button>
+        {{/each}}
+       
+      </div>
+      <div class="carousel-inner">
+        {{#each slider}}
+        <div class="carousel-item {{this.active}}">
+          <img src="{{this.thumbnail_url}}" class="d-block w-100 slider-img" alt="...">
+        </div>
+        {{/each}}
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+
+    {{!--................................. Connect................................. --}}
+
+    <table class="table" style="color: white">
+      <thead>
+        <tr>
+          <th scope="col" colspan="4" class="titlefor" style="height:50px" >Top Streamers</th>
+        </tr>
+      </thead >
+      <tbody>
+        {{#each connect}}
+        <tr style="">
+          <th scope="row" id="connect_index{{@index}}">{{@index}}</th>
+          <td class="picholder"><img src="{{this.profile_img_url}}" width=50px></td>
+          <td class="name" style="width:70%">{{this.channel_name}}<br> {{this.followers}} Followers
+          </td>
+          <td><button type="button" class="connectbutton">Connect</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+
+  <!-- ......................cards.......................  -->
+  <div class="test">
+    <h5 class="trend">TRENDING</h5>
+    <h2 class="trend1">#GamingTutorial</h2>
+    <nav class ="nav2">
+    <a href="###" class ="samelink">Top-Stream</a> 
+    <a href="###" class ="samelink">CurrentlyOnline</a> 
+    <a href="###" class ="samelink">Verified</a>
+  </nav>
+  </div>
+  <div>
+    <a href="###" class ="viewall">View All</a> 
+  <button type="button" class="filterbutton">Filter</button>
+  </div>
+  <div class="work-list">
+
+    <div class="row">
+  {{#each cards}}
+  <div class="col-md-3">
+    <div class="work">
+        <a href="{{this.link_url}}"><img src="{{this.thumbnail_url}}" class="card-image" alt="" ></a>
+        <div class="layer">
+          <div class="cards">
+            <h4><img src ="{{this.profile_pic_url}}" class = "profile-pic4" alt="" height = 40px >    {{this.title}}</h4>
+          </div>
+        </div>
+        <div style="margin-bottom: 20%;">
+        <p class="subtest ">{{this.channel_name}}</p>
+        <p class="sub-subtest "><span>{{this.views}}</span><span>   .   </span>{{this.date_posted}}<span></p>
+      </div>
+    </div>
+    </div>
+    {{/each}}
+    </div>
+  </div>
+<!--  .............................footer.............................  -->
+  <footer class="site-footer">
+    <div class="container col-md-12">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus atque fugit molestias doloremque repellendus, dignissimos eos. Ullam unde obcaecati ea eligendi explicabo soluta in excepturi quia repellendus, nam mollitia magni. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloribus excepturi cum inventore reprehenderit maxime corrupti quaerat cupiditate eos magnam.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li>abc</a></li>
+            <li><a href="#">def</a></li>
+            <li><a href="#">ghi</a></li>
+            <li><a href="#">jkl</a></li>
+            <li><a href="#">mno</a></li>
+            <li><a href="#">pqr</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">live-server</a></li>
+            <li><a href="#">social</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+       <a href="#">GAMHUB</a>.
+          </p>
+        </div>
+
+        <div  class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/106a3659bb.js" crossorigin="anonymous"></script>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+{{#each connect}}
+  var a=document.getElementById("connect_index{{@index}}").textContent
+  console.log("hi")
+  console.log(a)
+  //console.log("hi")
+  document.getElementById("connect_index{{@index}}").textContent=Number(a)+1
+  console.log(document.getElementById("connect_index{{@index}}").textContent)
+  {{/each}}
+</script>
+</body>
+</html>
