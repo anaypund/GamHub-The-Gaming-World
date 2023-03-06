@@ -1,29 +1,3 @@
-const express=require('express')
-const routes=require('./routes/main.js')
-const hbs=require('hbs')
-const mongooses=require('mongoose')
-const BodyParser=require('body-parser')
-const {default: mongoose}=require('mongoose')
-const Cards=require('./models/cards')
-const Slider=require('./models/slider')
-const Connect=require('./models/connect')
-
-
-const app = express()
-
-app.use(BodyParser.urlencoded({ extended: true }))
-app.use("/static",express.static("public"))
-app.use("",routes)
-
-app.set('view engine', 'hbs')
-app.set("views","views")
-
-hbs.registerPartials("views/partials")
-
-
-mongoose.set('strictQuery', true);
-mongoose.connect("mongodb://127.0.0.1/GamHub",()=>{
-    console.log("db connected")
 
     // Connect.create([
     //     {
@@ -86,12 +60,3 @@ mongoose.connect("mongodb://127.0.0.1/GamHub",()=>{
 //         link_url:"/vid",
 //     },
 // ])
-
-})
-
-
-
-
-app.listen(process.env.PORT | 5000,()=>{
-    console.log('listening on port 5000........')
-})
